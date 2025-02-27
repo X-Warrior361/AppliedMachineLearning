@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/Education/CMI/4th Semester/AML/AppliedMachineLearning/Assignment_2/mlruns/765116410488012115/d8ee8d4cfbec4fa384a7cc1059877acd/artifacts
+end_time: 1740238389701
+entry_point_name: ''
+experiment_id: '765116410488012115'
+lifecycle_stage: active
+run_id: d8ee8d4cfbec4fa384a7cc1059877acd
+run_name: Logistic Regression_val
+run_uuid: d8ee8d4cfbec4fa384a7cc1059877acd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740238384227
+status: 3
+tags: []
+user_id: X Warrior

@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/Education/CMI/4th Semester/AML/AppliedMachineLearning/Assignment_2/mlruns/765116410488012115/cdae96b3563b456cac89bba008f7ea9e/artifacts
+end_time: 1740238395209
+entry_point_name: ''
+experiment_id: '765116410488012115'
+lifecycle_stage: active
+run_id: cdae96b3563b456cac89bba008f7ea9e
+run_name: Random Forest_val
+run_uuid: cdae96b3563b456cac89bba008f7ea9e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740238389707
+status: 3
+tags: []
+user_id: X Warrior

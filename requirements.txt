@@ -1,0 +1,6 @@
+dvc
+nltk
+mlflow
+pandas
+seaborn
+scikit-learn
