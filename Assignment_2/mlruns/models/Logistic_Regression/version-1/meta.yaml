@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1741012610517
+current_stage: None
+description: null
+last_updated_timestamp: 1741012610517
+name: Logistic_Regression
+run_id: 1f0ce107e0b949c780b43de758575eca
+run_link: null
+source: file:///d:/Education/CMI/4th Semester/AML/AppliedMachineLearning/Assignment_2/mlruns/282749747970365678/1f0ce107e0b949c780b43de758575eca/artifacts/Logistic_Regression_val
+status: READY
+status_message: null
+storage_location: file:///d:/Education/CMI/4th Semester/AML/AppliedMachineLearning/Assignment_2/mlruns/282749747970365678/1f0ce107e0b949c780b43de758575eca/artifacts/Logistic_Regression_val
+user_id: null
+version: 1

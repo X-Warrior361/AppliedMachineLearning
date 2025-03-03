@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1741012616985
+current_stage: None
+description: null
+last_updated_timestamp: 1741012616985
+name: Random_Forest
+run_id: 591181adb9914cc1bf3fc1e2af83c976
+run_link: null
+source: file:///d:/Education/CMI/4th Semester/AML/AppliedMachineLearning/Assignment_2/mlruns/282749747970365678/591181adb9914cc1bf3fc1e2af83c976/artifacts/Random_Forest_val
+status: READY
+status_message: null
+storage_location: file:///d:/Education/CMI/4th Semester/AML/AppliedMachineLearning/Assignment_2/mlruns/282749747970365678/591181adb9914cc1bf3fc1e2af83c976/artifacts/Random_Forest_val
+user_id: null
+version: 1

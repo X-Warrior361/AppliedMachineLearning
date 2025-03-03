@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/Education/CMI/4th Semester/AML/AppliedMachineLearning/Assignment_2/mlruns/282749747970365678/22de36ef5542441995d2e0bd883240fe/artifacts
+end_time: 1741012621754
+entry_point_name: ''
+experiment_id: '282749747970365678'
+lifecycle_stage: active
+run_id: 22de36ef5542441995d2e0bd883240fe
+run_name: Naive_Bayes_val
+run_uuid: 22de36ef5542441995d2e0bd883240fe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741012617027
+status: 3
+tags: []
+user_id: X Warrior

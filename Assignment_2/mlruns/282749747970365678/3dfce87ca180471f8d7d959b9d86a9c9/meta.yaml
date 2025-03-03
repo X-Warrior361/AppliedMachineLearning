@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/Education/CMI/4th Semester/AML/AppliedMachineLearning/Assignment_2/mlruns/282749747970365678/3dfce87ca180471f8d7d959b9d86a9c9/artifacts
+end_time: 1741012785703
+entry_point_name: ''
+experiment_id: '282749747970365678'
+lifecycle_stage: active
+run_id: 3dfce87ca180471f8d7d959b9d86a9c9
+run_name: Naive_Bayes_val_tuned
+run_uuid: 3dfce87ca180471f8d7d959b9d86a9c9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741012780429
+status: 3
+tags: []
+user_id: X Warrior
