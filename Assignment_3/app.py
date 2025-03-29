@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 import joblib
-import sklearn
 import os
 import sys
 
@@ -20,12 +19,6 @@ except Exception as e:
 
 @app.route('/score', methods=['POST'])
 def score_text():
-    """
-    Endpoint to score a text for spam prediction
-    
-    Expected JSON input: {'text': 'sample text to score'}
-    Returns JSON with prediction and propensity
-    """
     # Check if model is loaded
     if model is None:
         return jsonify({

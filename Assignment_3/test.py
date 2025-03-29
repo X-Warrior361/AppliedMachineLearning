@@ -1,8 +1,7 @@
 import joblib
-import numpy as np
 from score import score
 
-# Load the trained model and vectorizer
+# Load the trained model
 model = joblib.load('best_model.pkl')
 
 def test_score_smoke_test():

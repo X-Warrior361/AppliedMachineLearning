@@ -7,16 +7,9 @@ import subprocess
 import signal
 
 def test_flask_endpoint():
-    """
-    Integration test for Flask scoring endpoint
-    - Launches Flask app
-    - Tests endpoint
-    - Closes Flask app
-    """
     # Prepare the command to run the Flask app
-    flask_command = [sys.executable, 'flask-app.py']
+    flask_command = [sys.executable, 'app.py']
     
-    # Start the Flask app as a subprocess
     try:
         # Launch the Flask app
         process = subprocess.Popen(
@@ -24,8 +17,6 @@ def test_flask_endpoint():
             stdout=subprocess.PIPE, 
             stderr=subprocess.PIPE
         )
-        
-        # Give the app a moment to start
         time.sleep(2)
         
         # Test endpoint with spam text
@@ -71,17 +62,9 @@ def test_flask_endpoint():
             pytest.fail(f"Request to Flask endpoint failed: {e}")
         
     finally:
-        # Terminate the Flask process
         if process:
-            # Send SIGTERM to gracefully stop the process
             os.kill(process.pid, signal.SIGTERM)
             
-            # Wait for the process to terminate
-            try:
-                process.wait(timeout=3)
-            except subprocess.TimeoutExpired:
-                # Force kill if it doesn't terminate
-                os.kill(process.pid, signal.SIGKILL)
 
 
 if __name__ == "__main__":
