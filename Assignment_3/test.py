@@ -1,4 +1,12 @@
+import os
+import sys
+import time
+import requests
+import pytest
+import subprocess
+import signal
 import joblib
+import platform
 from score import score
 
 # Load the trained model
@@ -51,12 +59,57 @@ def test_obvious_non_spam_text():
     assert prediction is False
     assert propensity <= 0.5
 
-if __name__ == "__main__":
-    test_score_smoke_test()
-    test_score_output_format()
-    test_score_prediction_values()
-    test_score_propensity_range()
-    test_threshold_zero()
-    test_threshold_one()
-    test_obvious_spam_text()
-    test_obvious_non_spam_text()
+def test_flask():
+    # Prepare the command to run the Flask app
+    flask_command = [sys.executable, 'app.py']
+    
+    try:
+        # Launch the Flask app
+        process = subprocess.Popen(
+            flask_command, 
+            stdout=subprocess.PIPE, 
+            stderr=subprocess.PIPE
+        )
+        time.sleep(15)
+        
+        # Test endpoint with spam text
+        spam_response = requests.post(
+            'http://127.0.0.1:5000/score', 
+            json={'text': 'well done england get official poly ringtone colour flag yer mobile text tone flag optout txt eng stop box wwx £'},
+            timeout=15
+        )
+        
+        # Validate response
+        assert spam_response.status_code == 200
+        response_data = spam_response.json()
+        
+        # Check response structure
+        assert 'prediction' in response_data
+        assert 'propensity' in response_data
+        
+        # Check prediction is True for spam
+        assert response_data['prediction'] is True
+        assert 0 <= response_data['propensity'] <= 1
+        
+        # Test non-spam text
+        non_spam_response = requests.post(
+            'http://127.0.0.1:5000/score', 
+            json={'text': 'Hi Mom, how are you today?'},
+            timeout=15
+        )
+        
+        # Validate response
+        assert non_spam_response.status_code == 200
+        non_spam_data = non_spam_response.json()
+        
+        # Check response structure
+        assert 'prediction' in non_spam_data
+        assert 'propensity' in non_spam_data
+        
+        # Check prediction is False for non-spam
+        assert non_spam_data['prediction'] is False
+        assert 0 <= non_spam_data['propensity'] <= 1
+        
+    finally:
+        if process:
+            os.kill(process.pid, signal.SIGTERM)
