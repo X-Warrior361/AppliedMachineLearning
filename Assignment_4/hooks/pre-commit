@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Get the current branch name
+current_branch=$(git symbolic-ref --short HEAD)
+
+# Only run tests when committing to the main branch
+if [ "$current_branch" = "main" ]; then
+    echo "Committing to main branch. Running tests..."
+    
+    # Run the test script
+    python test.py
+    test_status=$?
+    
+    # If tests failed, abort commit
+    if [ $test_status -ne 0 ]; then
+        echo "Tests failed! Commit aborted."
+        exit 1
+    fi
+    
+    echo "All tests passed. Proceeding with commit."
+fi
+
+exit 0
